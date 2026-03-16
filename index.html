@@ -205,6 +205,82 @@
             text-decoration: none;
         }
 
+        .book-section {
+            background: rgba(201, 162, 39, 0.05);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--cream);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: var(--cream);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(245, 240, 232, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--pink);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.4);
+        }
+
         @media (max-width: 600px) {
             .prom-year {
                 font-size: 2.5rem;
@@ -301,6 +377,66 @@
                     <li>Professional, well-dressed servers</li>
                 </ul>
             </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="book-section">
+            <div class="book-title">Book Your Prom Send-Off</div>
+            
+            <form action="https://formspree.io/f/xnnnrkor" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="267-XXX-XXXX">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-date">Event Date *</label>
+                        <input type="date" id="event-date" name="event-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Guest Count *</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select...</option>
+                            <option value="25">25 Guests ($725)</option>
+                            <option value="50">50 Guests ($1,250)</option>
+                            <option value="100">100 Guests ($2,395)</option>
+                            <option value="125">125 Guests ($2,895)</option>
+                            <option value="150">150 Guests ($3,495)</option>
+                            <option value="200+">200+ Guests (Custom Quote)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="package">Experience Type *</label>
+                    <select id="package" name="package" required>
+                        <option value="">Select...</option>
+                        <option value="elevated">Elevated Table Experience (Min 50)</option>
+                        <option value="full-service">Full Service Experience (Min 50)</option>
+                        <option value="not-sure">Not Sure Yet - Let's Discuss</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Details</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your event, dietary restrictions, special requests..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Booking Request</button>
+            </form>
         </div>
 
         <div class="divider"></div>
